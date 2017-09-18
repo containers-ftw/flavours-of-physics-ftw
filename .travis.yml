@@ -19,6 +19,7 @@ compiler:
 before_install:
   - sudo sed -i -e 's/^Defaults\tsecure_path.*$//' /etc/sudoers
   - cd /tmp && git clone -b development https://www.github.com/singularityware/singularity.git && cd singularity
+  - sudo apt-get update && apt-get install -y squashfs-tools
   - echo $PWD && ls
   - ./autogen.sh && ./configure --prefix=/usr/local && make && sudo make install
   - cd $TRAVIS_BUILD_DIR/
