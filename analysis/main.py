@@ -56,6 +56,10 @@ check_auc(baseline,train_eval,variables)
 
 
 
+# VISUALIZATION ########################################
+
+# Do you have an additional (web friendly) visualization?
+# Drop it here to render.
 
 
 

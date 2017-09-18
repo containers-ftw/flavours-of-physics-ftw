@@ -5,20 +5,22 @@
 
 This is a competition orginally [hosted on Kaggle](https://www.kaggle.com/c/flavours-of-physics/data), reproduced here to encourage containerization of submissions by way of [Singularity](https://singularity.lbl.gov). If you aren't familiar with Singularity, it's a container (like Docker) that can be run securely on HPC architectures.
 
-## TLDR
+## Clone
+First fork the repo to your own username. For example, if my user name is `vsoch`:
 
-### Clone
 ```
 git clone https://www.github.com/vsoch/flavours-of-physics-ftw
 cd flavours-of-physics-ftw
 ```
 
-### Build
+## Build
 ```
 singularity create --size 8000 container.ftw 
 sudo singularity bootstrap container.ftw Singularity
+```
 
-### Run
+## Run
+
 ```
 singularity run -B data/input:/data/input -B analysis:/code --pwd /code container.ftw
 ```
@@ -37,7 +39,7 @@ Now edit `main.py`, do better, and submit a PR to the contest repo for your entr
 Evaluation for this competition is based on AUC (area under the curve), defined as area under the curve, which broadly gets at the ratio of false positives to false negatives for your model.  In addition to this criteria, the [metrics](metrics.py) file includes multiple checks that physicists do to make sure that results are unbiased.
 
 
-## Build
+### Build
 When you are ready to start your submission, you should fork the repo to your branch, and then clone the fork. For example, if my username on Github was `vsoch`, I would fork and then do:
 
 ```
